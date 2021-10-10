@@ -6,15 +6,21 @@ const cors = require('cors')
 const albumsData = require("./albums_data")
 // Models:
 const Albums = require("./models/albums_model")
+// Routes:
+const allAlbumsRoute = require("./routes/albums_routes")
+const allSongsRoute = require("./routes/albums_routes")
+const oneAlbumRoute = require("./routes/one_album_route")
 
 dotenv.config()
 
 const app = express()
-
 app.use( cors() )
 app.use( express.json() )
 
-
+// Albums related routes:
+app.use("/api/albums/", allAlbumsRoute)
+app.use("/api/songs/",allSongsRoute)
+app.use("/api/album/",oneAlbumRoute)
 
 mongoose.connect(process.env.ATLAS_URI,  (err, db) => {
     if (err) throw err;
