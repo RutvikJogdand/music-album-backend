@@ -8,8 +8,9 @@ const albumsData = require("./albums_data")
 const Albums = require("./models/albums_model")
 // Routes:
 const allAlbumsRoute = require("./routes/albums_routes")
+const allSongsFromAlbumRoute = require("./routes/albums_routes")
+const oneAlbumRoute = require("./routes/albums_routes")
 const allSongsRoute = require("./routes/albums_routes")
-const oneAlbumRoute = require("./routes/one_album_route")
 
 dotenv.config()
 
@@ -19,8 +20,9 @@ app.use( express.json() )
 
 // Albums related routes:
 app.use("/api/albums/", allAlbumsRoute)
-app.use("/api/songs/",allSongsRoute)
+app.use("/api/songs/",allSongsFromAlbumRoute)
 app.use("/api/album/",oneAlbumRoute)
+app.use("/api/",allSongsRoute)
 
 mongoose.connect(process.env.ATLAS_URI,  (err, db) => {
     if (err) throw err;
