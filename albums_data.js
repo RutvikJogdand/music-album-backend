@@ -2,6 +2,7 @@ let albums = [
 
     {
         "id": 1,
+        "album_id": 1,
         "album_name": "Recovery",
         "ofArtist": "Eminem",
         "artist_logo": "https://hyperpix.net/wp-content/uploads/2020/04/eminem-logo-font-free-download-1200x675.jpg",
@@ -20,6 +21,7 @@ let albums = [
 
     {
         "id":2,
+        "album_id": 2,
         "album_name": "Relapse",
         "ofArtist": "Eminem",
         "artist_logo": "https://hyperpix.net/wp-content/uploads/2020/04/eminem-logo-font-free-download-1200x675.jpg",
@@ -39,6 +41,7 @@ let albums = [
 
     {
         "id": 3,
+        "album_id": 3,
         "album_name": "High_Voltage",
         "ofArtist": "ACDC",
         "artist_logo": "https://i.pinimg.com/originals/5e/5e/80/5e5e806033511378f1b0b121630c7ffb.jpg",
@@ -59,6 +62,7 @@ let albums = [
 
     {
         "id": 4,
+        "album_id": 4,
         "album_name": "Back_In_Black",
         "ofArtist": "ACDC",
         "artist_logo": "https://i.pinimg.com/originals/5e/5e/80/5e5e806033511378f1b0b121630c7ffb.jpg",
@@ -77,6 +81,7 @@ let albums = [
 
     {
         "id": 5,
+        "album_id": 5,
         "album_name": "Hybrid_Theory",
         "ofArtist": "LinkinPark",
         "artist_logo": "https://www.youredm.com/wp-content/uploads/2017/07/linkin-park-logo-sans-chester.jpg",

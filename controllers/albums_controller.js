@@ -24,7 +24,7 @@ const getSongsFromAlbum = async(req, res) => {
       id: id
   })
   .then(res => {
-    if(res.length !== 0) //check if array 
+    if(res.length !== 0) //check if array length is 0 ie no such album is present (id does not exist)
     {
       return(res[0].songs)
     }
@@ -54,16 +54,16 @@ const getSongsFromAlbum = async(req, res) => {
 
 const getOneAlbum = async(req, res) => {
 
-  console.log(req.query)
+  // console.log(req.query)
   const {id} = req.query
   const query = {id: id}
 
   let reqAlbum =  await Albums.findOne(query).then(res =>{
-    console.log(res)
+    // console.log(res)
     return res
   }).catch(err => err)
 
-  console.log(reqAlbum)
+  // console.log(reqAlbum)
   if(reqAlbum)
   {
     res.status(200).send({
@@ -81,23 +81,5 @@ const getOneAlbum = async(req, res) => {
 
 }
 
-const getAllSongs = async(req, res) => {
 
-  const allSongs = await Albums.find().then(res => res.map(item => item.songs)).catch(err => err)
-
-  if(allSongs)
-    {
-      res.status(200).send({
-        err: false,
-        data: allSongs
-      })
-    }
-    else
-    {
-      res.status(400).send("Error getting songs")
-    }
-}
-
-
-
-module.exports = {getAllAlbums, getSongsFromAlbum, getOneAlbum, getAllSongs}
+module.exports = {getAllAlbums, getSongsFromAlbum, getOneAlbum}
